@@ -4,19 +4,19 @@
 
 using namespace std;
 
-taskset::taskset(const taskset *sample)
+taskset::taskset(const taskset *sam)
 {
-	this->task_num=sample->task_num;
-	this->processor_num=sample->processor_num;
-	this->lcm_period=this->lcm_period;
+	this->task_num=sam->getTaskNm();
+	this->processor_num=sam->getProcessorNum();
+	this->lcm_period=sam->getLcmPeriod();
 	
 	this->period=(int *)malloc(sizeof(int)*this->task_num);
 	this->execute=(int *)malloc(sizeof(int)*this->task_num);
 
 	for(int i=0; i<this->task_num; i++)
 	{
-		this->period[i]=sample->period[i];
-		this->execute[i]=sample->execute[i];
+		this->period[i]=sam->getPeriod[i];
+		this->execute[i]=sam->getExecute[i];
 	}
 }
 

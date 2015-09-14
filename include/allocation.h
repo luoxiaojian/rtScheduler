@@ -4,13 +4,14 @@
 class allocation
 {
 	public:
-		allocation(taskset sample);
+		allocation(const taskset *sample);
 		~allocation();
 		void setAlloc(int time, int pno, int value);
 		void outputAlloc();
-		bool checkSchedule();
+		bool checkSchedule(const taskset *sample);
 
 	private:
 		int **alloc;
-		taskset sample;
+		int processor_num, lcm_period, task_num;
 }
+

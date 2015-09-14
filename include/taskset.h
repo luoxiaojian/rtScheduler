@@ -4,7 +4,7 @@
 class taskset
 {
 	public:
-		taskset(taskset sample);
+		taskset(const taskset *sam);
 		~taskset();
 		void setTaskNum(int tn);
 		void setProcessorNum(int pn);
